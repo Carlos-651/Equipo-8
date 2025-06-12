@@ -51,12 +51,12 @@ class Cancion{
 
     //Devuelve true si esta reproduciendo, false en otro caso
     estaReproduciendo(){
-        return this.estaReproduciendo;
+        return this.estaReproduciendo; //SIMPLIFIQUE LA CONDICIONAL, LA VARIABLE ES LA QUE DICTA SI SE ESTA REPRODUCIENDO O NO (manda false o true)
     }
 
     //Cambia de no reproduciendo a reproduciendo
     play(){
-        this.reproduciendo = true;
+        this.reproduciendo = true; 
     }
 
     //Cambia de reproduciendo a no reproduciendo
@@ -102,7 +102,7 @@ class ListaDeReproduccion{
     }
 
     fusionar(listaDeReproduccion){
-        return listaDeReproduccion.get().concat(this.lista);
+        return listaDeReproduccion.get().concat(this.lista); //ARREGLE (antes decia ListaDeReproduccion) por la mayuscula listaDeReproduccion
     }
     
 }
