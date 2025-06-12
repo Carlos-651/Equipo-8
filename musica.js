@@ -51,10 +51,7 @@ class Cancion{
 
     //Devuelve true si esta reproduciendo, false en otro caso
     estaReproduciendo(){
-        if (this.reproduciendo == true)
-            return true;
-        else
-            return false;
+        return this.estaReproduciendo;
     }
 
     //Cambia de no reproduciendo a reproduciendo
@@ -105,7 +102,7 @@ class ListaDeReproduccion{
     }
 
     fusionar(listaDeReproduccion){
-        return ListaDeReproduccion.get().concat(this.lista);
+        return listaDeReproduccion.get().concat(this.lista);
     }
     
 }
