@@ -1,10 +1,12 @@
-  constructor(nombre, id, genero, artista, url){
+class Cancion{
+
+    constructor(nombre, id, genero, artista, url){
         this.nombre = nombre;
         this.id = id;
         this.genero = genero;
         this.artista = artista;
         this.url = url;
-        this.reproduciendo = false;
+        this.reproduciendo = false; 
     }
 
     setNombre(nombre){
@@ -14,33 +16,38 @@
         return this.nombre;
     }
 
-    setId(id) {
+    setId(id){
         this.id = id;
-    }
-    getId() {
+    }   
+    getId(){
         return this.id;
     }
 
-    setGenero(genero) {
+    setGenero(genero){
         this.genero = genero;
-    }
-    getGenero() {
+    }   
+    getGenero(){
         return this.genero;
-    }
+    } 
 
-    setArtista(artista) {
+    setArtista(artista){
         this.artista = artista;
-    }
-    getArtista() {
+    }   
+    getArtista(){
         return this.artista;
     }
 
-    setUrl(url) {
+    setUrl(url){
         this.url = url;
-    }
-    getUrl() {
-        return this.url;
-    }
+    }   
+    getUrl(){
+        return this.url
+    } 
+    
+    /*
+        Deben de colocar los getters y setters que faltan
+    */
+    
 
     //Devuelve true si esta reproduciendo, false en otro caso
     estaReproduciendo(){
@@ -52,65 +59,62 @@
 
     //Cambia de no reproduciendo a reproduciendo
     play(){
-       
+        this.reproduciendo = true;
     }
 
     //Cambia de reproduciendo a no reproduciendo
     stop(){
-        
+        this.reproduciendo = false;
     }
 }
 
 class ListaDeReproduccion{
 
     constructor(arreglo){
-        this.lista = arreglo
+        this.lista = arreglo;
     }
     
     //Elimína el elemento del índice y lo devuelve
     pop(indice){
-        //Pista: Investiguen el método splice(inicio,numero_de_elementos_a_borrar) dentro del objeto Array
-    
+        let c = this.lista[indice];
+        this.lista.splice(indice,1);
+        return c;
     }
 
     //Inserta un objeto canción dentro de la lista
-    push(objeto){
-        this.lista.push(objeto);
+    push(canciones){
+            this.lista.push(canciones);
     }
 
     //Devuelve la longitud de la lista
     getSize(){
         return this.lista.length;
-        
     }
     
     shuffle(){
-        //Visto en clase
-        for(let i = 0; i < this.lista.length - 1; i++) {
-            let j = Math.floor(Math.random() * (i + 1));
+        for (let i = 0; i < this.lista.length; i++)
+        {
+            let j = Math.floor(Math.random() * (i+1));
             intercambiar(this.lista,i,j);
         }
-
     }
 
     //Devuelve la lista
     get(){
         return this.lista;
-        
     }
 
     fusionar(listaDeReproduccion){
-        //Visto en clase
-        return this.lista.concat(listaDeReproduccion.get());
+        return ListaDeReproduccion.get().concat(this.lista);
     }
-
+    
 }
-
-function intercambiar(arreglo, indice, indiceb){
+function intercambiar(arreglo, indicea, indiceb) {
     let c = arreglo[indicea];
     arreglo[indicea] = arreglo[indiceb];
     arreglo[indiceb] = c;
 }
+
 
 canciones = [ 
   new Cancion("Bohemian Rhapsody", 1, "Rock", "Queen", "https://www.youtube.com/watch?v=yk3prd8GER4"),
@@ -136,6 +140,7 @@ canciones = [
 ]
 
 //Probar codigo aqui
+
 
 let lista = new ListaDeReproduccion[(1,4,6)];
 let lista2 = new ListaDeReproduccion[(6,5,9)];
