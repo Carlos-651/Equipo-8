@@ -51,7 +51,7 @@ class Cancion{
 
     //Devuelve true si esta reproduciendo, false en otro caso
     estaReproduciendo(){
-        return this.estaReproduciendo; //SIMPLIFIQUE LA CONDICIONAL, LA VARIABLE ES LA QUE DICTA SI SE ESTA REPRODUCIENDO O NO (manda false o true)
+        return this.reproduciendo; //SIMPLIFIQUE LA CONDICIONAL, LA VARIABLE ES LA QUE DICTA SI SE ESTA REPRODUCIENDO O NO (manda false o true)
     }
 
     //Cambia de no reproduciendo a reproduciendo
@@ -80,7 +80,12 @@ class ListaDeReproduccion{
 
     //Inserta un objeto canción dentro de la lista
     push(canciones){
+        if (canciones != Cancion){
+            return -1;
+        }
+        else {
             this.lista.push(canciones);
+        }
     }
 
     //Devuelve la longitud de la lista
@@ -102,7 +107,7 @@ class ListaDeReproduccion{
     }
 
     fusionar(listaDeReproduccion){
-        return listaDeReproduccion.get().concat(this.lista); //ARREGLE (antes decia ListaDeReproduccion) por la mayuscula listaDeReproduccion
+        return this.lista.concat(listaDeReproduccion.get()); //ARREGLE (antes decia ListaDeReproduccion) por la mayuscula listaDeReproduccion
     }
     
 }
@@ -136,10 +141,23 @@ canciones = [
   new Cancion("Lamento Boliviano", 20, "Rock", "Los Enanitos Verdes", "https://www.youtube.com/watch?v=_dRsmc8vDN0&pp=ygUYbGFtZW50byBib2xpdmlhbm8gbHlyaWNz"),
 ]
 
-//Probar codigo aqui
-
-
 let lista = new ListaDeReproduccion([1,2,3]); //DECLARANDO MAL EL OBJETO , NO es [()] ES ([el interior crea una lista])
 let lista2 = new ListaDeReproduccion([6,5,9]);
+let cancion1 = new Cancion("Lamento Boliviano", 20, "Rock", "Los Enanitos Verdes", "https://www.youtube.com/watch?v=_dRsmc8vDN0&pp=ygUYbGFtZW50byBib2xpdmlhbm8gbHlyaWNz");
 
-console.log(lista.fusionar(lista2))
+//Prueba en consola los métodos de la clase Canción
+console.log("Está reproduciendo: " + canciones[0].estaReproduciendo());
+canciones[0].play(); //Reproducir la canción
+console.log("(Después de la función play) Está reproduciendo: " + canciones[0].estaReproduciendo());
+canciones[0].stop(); //Para la canción
+console.log("(Después de la función stop) Está reproduciendo: " + canciones[0].estaReproduciendo());
+
+//Prueba en consola los métodos de la clase ListaDeReproduccion
+    console.log("El índice eliminado es: " + lista.pop(2));
+    console.log("La longitud de la lista es: " + lista.getSize());
+    lista.push(cancion1); //Agregando una canción a la lista
+    console.log("La longitud de la lista después de agregar una canción es: " + lista.getSize());
+    console.log("La lista de reproducción antes de un shuffle es: " + lista.get());
+    lista.shuffle(); //Barajando la lista
+    console.log("La lista de reproducción después de un shuffle es: " + lista.get());
+    console.log("La lista de reproducción después de fusionar es: " + lista.fusionar(lista2));
