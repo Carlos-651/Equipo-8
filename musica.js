@@ -139,7 +139,7 @@ canciones = [
 //Probar codigo aqui
 
 
-let lista = new ListaDeReproduccion[(1,4,6)];
-let lista2 = new ListaDeReproduccion[(6,5,9)];
+let lista = new ListaDeReproduccion([1,2,3]); //DECLARANDO MAL EL OBJETO , NO es [()] ES ([el interior crea una lista])
+let lista2 = new ListaDeReproduccion([6,5,9]);
 
 console.log(lista.fusionar(lista2))
