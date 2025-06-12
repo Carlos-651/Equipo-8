@@ -51,15 +51,12 @@ class Cancion{
 
     //Devuelve true si esta reproduciendo, false en otro caso
     estaReproduciendo(){
-        if (this.reproduciendo == true)
-            return true;
-        else
-            return false;
+        return this.estaReproduciendo; //SIMPLIFIQUE LA CONDICIONAL, LA VARIABLE ES LA QUE DICTA SI SE ESTA REPRODUCIENDO O NO (manda false o true)
     }
 
     //Cambia de no reproduciendo a reproduciendo
     play(){
-        this.reproduciendo = true;
+        this.reproduciendo = true; 
     }
 
     //Cambia de reproduciendo a no reproduciendo
@@ -105,7 +102,7 @@ class ListaDeReproduccion{
     }
 
     fusionar(listaDeReproduccion){
-        return ListaDeReproduccion.get().concat(this.lista);
+        return listaDeReproduccion.get().concat(this.lista); //ARREGLE (antes decia ListaDeReproduccion) por la mayuscula listaDeReproduccion
     }
     
 }
@@ -142,7 +139,7 @@ canciones = [
 //Probar codigo aqui
 
 
-let lista = new ListaDeReproduccion[(1,4,6)];
-let lista2 = new ListaDeReproduccion[(6,5,9)];
+let lista = new ListaDeReproduccion([1,2,3]); //DECLARANDO MAL EL OBJETO , NO es [()] ES ([el interior crea una lista])
+let lista2 = new ListaDeReproduccion([6,5,9]);
 
 console.log(lista.fusionar(lista2))
