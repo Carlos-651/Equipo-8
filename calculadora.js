@@ -1,5 +1,3 @@
-
-
 class Calculadora{
 
     suma(var1,var2)
@@ -31,7 +29,7 @@ class Calculadora{
     }
 }
 
-const calculadora1 = new calculadora;
+const calculadora1 = new Calculadora();
 const var1 =2;
 const var2=10;
 
