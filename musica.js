@@ -80,12 +80,7 @@ class ListaDeReproduccion{
 
     //Inserta un objeto canción dentro de la lista
     push(canciones){
-        if (canciones != Cancion){
-            return -1;
-        }
-        else {
             this.lista.push(canciones);
-        }
     }
 
     //Devuelve la longitud de la lista
