@@ -7,14 +7,10 @@
     border: none;
     border-radius: 6px;
     font-size: 15px;
-    display: inline-flex;
+    display: inline;
     align-items: center;
 }
 
-.button-contador::before{
-    content: "🌞";
-    font-size: 8px;
-}
 
 /*boton buscador*/
 
@@ -25,12 +21,8 @@
     border: none;
     border-radius: 6px;
     font-size: 15px;
+    display: inline;
     align-items: center;
-}
-
-.button-buscador::before{
-    content: "🕵🏿";
-    font-size: 8px;
 }
 
 /*boton acronimo*/
@@ -42,12 +34,6 @@
     border: none;
     border-radius: 6px;
     font-size: 15px;
-    display: inline-flex;
+    display: inline;
     align-items: center;
-}
-
-
-.button-acronimo::before{
-    content: "🐦‍⬛";
-    font-size: 8px;
 }
