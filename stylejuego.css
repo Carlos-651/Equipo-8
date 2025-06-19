@@ -2,31 +2,14 @@
 
 .button-contador {
     padding: 12px 20px;
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background:#3498db;
     color: white;
     border: none;
     border-radius: 6px;
-    cursor: pointer;
     font-size: 15px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: inline-flex;
     align-items: center;
-    gap: 8px;
 }
-
-.button-contador:hover {
-    background: linear-gradient(135deg, #2980b9, #3498db);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
-}
-
-.button-contador:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 
 .button-contador::before{
     content: "🌞";
@@ -37,30 +20,14 @@
 
 .button-buscador {
     padding: 12px 20px;
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background:#3498db;
     color: white;
     border: none;
     border-radius: 6px;
-    cursor: pointer;
     font-size: 15px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: inline-flex;
     align-items: center;
-    gap: 8px;
 }
 
-.button-buscador:hover {
-    background: linear-gradient(135deg, #2980b9, #3498db);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
-}
-
-.button-buscador:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 .button-buscador::before{
     content: "🕵🏿";
     font-size: 8px;
@@ -70,30 +37,15 @@
 
 .button-acronimo {
     padding: 12px 20px;
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background: #3498db;
     color: white;
     border: none;
     border-radius: 6px;
-    cursor: pointer;
     font-size: 15px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: inline-flex;
     align-items: center;
-    gap: 8px;
 }
 
-.button-acronimo:hover {
-    background: linear-gradient(135deg, #2980b9, #3498db);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
-}
-
-.button-acronimo:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
 .button-acronimo::before{
     content: "🐦‍⬛";
